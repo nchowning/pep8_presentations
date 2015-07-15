@@ -52,9 +52,24 @@ In the first part of this PEP 8 presentation, we'll be covering the following se
 
 ---
 
-# Indentation: 4 Spaces
+# White Space
 
 White space is very important to Python. It is literally a part of Python's syntax.
+
+# Valid Syntax
+    !python
+    if True == True:
+        print("This is true!")
+
+# Invalid Syntax
+    !python
+    if True == True:
+    print("This is true!")
+
+---
+# Indentation
+
+Random or varying indentation will usually count as "valid" syntax however it makes your code much less readable.
 
 # Bad Style: Valid Syntax
     !python
@@ -69,6 +84,9 @@ White space is very important to Python. It is literally a part of Python's synt
     " several "
     " things."
     )
+
+---
+# Indentation: 4 Spaces
 
 To make your indentation style more readable, **use 4 spaces per indentation level**.
 
@@ -102,7 +120,7 @@ You can also do "hanging indents". With hanging indents there should be no argum
 
 ---
 
-# Indentation: Hanging Function Definitions
+# Indentation: Hanging Functions
 
 Function definitions & conditional logic adds a bit of complexity to our indentation. Here's an example of a function definition using the hanging indents:
 
@@ -114,7 +132,12 @@ Function definitions & conditional logic adds a bit of complexity to our indenta
         another_variable):
         print(a_variable, another_variable)
 
-It's hard to tell where the definition ends and the function's body begins. In this situation, it's better to further indent or align the parameters vertically
+It's hard to tell where the definition ends and the function's body begins.
+
+---
+# Indentation: Hanging Functions
+
+It's much better to further indent the paramebers or align the parameters vertically:
 
 # Good Style
 
@@ -181,7 +204,7 @@ The closing ")", "]", or "}" can vertically line up with the first non-whitespac
 
 # Tabs or Spaces?
 
-Spaces are preferred over Tabs. It is appropriate to use tabs to remain consistent in a project that has already been indented with tabs.
+Spaces are preferred over Tabs. It is appropriate to use tabs when working on a project that has already been indented with tabs.
 
 # Note
 Python 3 does not allow the mixing of tabs and spaces for indentation
@@ -202,13 +225,17 @@ A lot of people/teams choose to stretch the normal 80 character restriction to 1
 
 # Where to wrap
 
-The previously mentioned indentation/line-wrap methods are preferred for operations using Python's implied line continuation (inside parens, brackets, and braces). Some operations (with) do not support that implied line continuation. In those situations, we can use backslashes:
+The previously mentioned indentation/line-wrap methods are preferred for operations using Python's implied line continuation (inside parens, brackets, and braces). Some operations (the with command) do not support that implied line continuation. In those situations, we can use backslashes:
 
     !python
     with open("/path/to/file1") as file1, \
          open("/path/to/file2") as file2,:
         print(file1.read())
         print(file2.read())
+
+---
+
+# Where to wrap
 
 If you are breaking around a binary operator, it is preferred to break **after** the operator:
 
